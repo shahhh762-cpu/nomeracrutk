@@ -1,0 +1,9 @@
+body{background:#0d0f12;color:#f3f4ef;font-family:var(--font-sans),system-ui,sans-serif;padding-top:env(safe-area-inset-top,0)}
+:root{--font-sans:'Manrope';--font-plate:'Oswald'}
+@keyframes sheen{0%{transform:translateX(-120%)}100%{transform:translateX(320%)}}
+.sheen::after{content:"";position:absolute;inset:0;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);animation:sheen 2.8s ease-in-out infinite;pointer-events:none}
+@keyframes enter{from{opacity:0;transform:translateY(10px)}}
+.enter{animation:enter .3s ease both}.lift{transition:transform .2s}.lift:hover{transform:translateY(-4px)}
+@keyframes scan{0%{left:0}50%{left:100%}100%{left:0}}.scan{animation:scan 1.4s ease-in-out both}
+@media (prefers-reduced-motion:reduce){.sheen::after,.enter,.scan{animation:none}}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #ffb020;outline-offset:2px}
